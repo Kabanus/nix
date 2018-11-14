@@ -7,9 +7,9 @@
 > docker run -d *image*
 
 ##### keys
---publish *"local port:container port"* // --publish "8080:80"
---hostname *hostname* // --hostname newserver
---name *container_name* // --name newcontainer
+--publish *"local port:container port"* // --publish "8080:80"  
+--hostname *hostname* // --hostname newserver  
+--name *container_name* // --name newcontainer  
 
 # start CONTAINER interactive shell
 docker exec -it CONTAINER bash
