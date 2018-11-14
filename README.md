@@ -1,7 +1,6 @@
 # Docker
-[Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/docker.md)
-[Examples](https://github.com/Kabanus/nix/tree/master/content/examples/docker)
+> [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/docker.md)
+> [Examples](https://github.com/Kabanus/nix/tree/master/content/examples/docker)
 # Ansible
-[Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/docker.md)
-###### Examples
-[Examples](https://github.com/Kabanus/nix/tree/master/content/examples/ansible)
+>[Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/docker.md)
+>[Examples](https://github.com/Kabanus/nix/tree/master/content/examples/ansible)
