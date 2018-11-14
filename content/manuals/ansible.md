@@ -11,7 +11,7 @@ https://github.com/Kabanus/nix/blob/master/content/examples/ansible/hosts
 > ansible-playbook -k -b -i 10.0.0.1, script.yml
 
 ###### keys
-- - m // module name
-- - k // ask for privilege escalation password
-- - b // run operations with become
-- - i // specify inventory host path or comma separated host list
+. - m // module name
+. - k // ask for privilege escalation password
+. - b // run operations with become
+. - i // specify inventory host path or comma separated host list
