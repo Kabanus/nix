@@ -1,5 +1,5 @@
 ##### ansible
-> ansible 10.0.0.1, -b -m copy -a 'src=/file dest=/file'
+> ansible 10.0.0.1, -b -m copy -a 'src=/file dest=/file'  
 > ansible *servers* -b -m shell -a 'uptime'
 
 ###### ! [servers] from hosts
