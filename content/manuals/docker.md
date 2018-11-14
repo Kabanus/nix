@@ -9,7 +9,7 @@
 --hostname **server_name** // host name  
 --name **container_name** // container name  
 --env **MYSQL_ROOT_PASSWORD=password** // variables  
---link **dependent_container:alias** // dependencies  
+--link **container:alias** // dependencies  
 --volume **/data** // mount
 
 ##### connect container interactive shell
