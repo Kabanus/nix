@@ -10,7 +10,7 @@ https://github.com/Kabanus/nix/blob/master/content/examples/ansible/hosts
 ##### ansible-playbook run script
 > ansible-playbook -k -b -i 10.0.0.1, script.yml
 
-###### keys
+###### options
 \- m // module name  
 \- k // ask for privilege escalation password  
 \- b // run operations with become  
