@@ -32,6 +32,6 @@
 ### remove all stopped containers
 > docker rm -v ${docker ps -aq -f status=exited}
 
-# make image from container
-docker commit *container* **repository/image**
-docker push **repository/image**
+### make image from container
+> docker commit *container* **repository/image**  
+> docker push **repository/image**
