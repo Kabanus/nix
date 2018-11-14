@@ -1,7 +1,7 @@
 # Docker
 
-### start image interactive
-> docker run -it *image* **bash**
+### start image interactive shell
+> docker run -it *image* bash
 
 ### start image background
 > docker run -d *image*
@@ -11,8 +11,8 @@
 --hostname *hostname* // --hostname newserver  
 --name *container_name* // --name newcontainer  
 
-# start CONTAINER interactive shell
-docker exec -it CONTAINER bash
+### connect container interactive shell
+> docker exec -it *container* bash
 
 # image list
 docker image list
