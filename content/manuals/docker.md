@@ -4,7 +4,7 @@
 ##### start image background
 > docker run -d *image*
 
-###### example keys
+###### options
 --publish *"ip:local port:container port"* // --publish "127.0.0.1:8080:80"  
 --hostname *hostname* // --hostname newserver  
 --name *container* // --name newcontainer  
