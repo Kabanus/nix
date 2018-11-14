@@ -13,5 +13,4 @@ mysql:
     links:
         - php
 php:
-    image: php:7.2-fpm
     build: .
