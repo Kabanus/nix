@@ -9,6 +9,7 @@
 --hostname *hostname* // --hostname newserver  
 --name *container* // --name newcontainer  
 --env *variables* // --env MYSQL_ROOT_PASSWORD=password
+--link // --link somecontainer
 
 ##### connect container interactive shell
 > docker exec -it *container* **bash**
