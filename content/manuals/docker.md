@@ -13,11 +13,11 @@
 > docker exec -it *container* **bash**
 
 ##### image list
-> docker images
+> docker images  
 > docker image list
 
 ##### container list
-> docker ps // running
+> docker ps // running  
 > docker ps -a // all
 
 ##### container detail
