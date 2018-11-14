@@ -37,3 +37,6 @@
 
 ##### push image to github
 > docker push **repository/image**
+
+##### build image
+> docker build -t **repository/image**
