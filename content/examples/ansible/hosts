@@ -1,0 +1,5 @@
+[servers]
+server.com
+10.0.0.1
+server[01:10].com
+10.0.0.[1:255]
