@@ -1,5 +1,3 @@
-# Docker
-
 ### start image interactive shell
 > docker run -it *image* **bash**
 
