@@ -5,12 +5,12 @@
 > docker run -d *image*
 
 ###### options
---publish "127.0.0.1:8080:80" // port forwarding  
---hostname server_name // host name  
---name container_name // container name  
---env MYSQL_ROOT_PASSWORD=password // variables  
---link dependent_container:alias // dependencies  
---volume /data // mount
+--publish **"127.0.0.1:8080:80"** // port forwarding  
+--hostname **server_name** // host name  
+--name **container_name** // container name  
+--env **MYSQL_ROOT_PASSWORD=password** // variables  
+--link **dependent_container:alias** // dependencies  
+--volume **/data** // mount
 
 ##### connect container interactive shell
 > docker exec -it *container* **bash**
