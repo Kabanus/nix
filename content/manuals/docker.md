@@ -32,6 +32,9 @@
 ##### container events
 > docker logs **_container_**
 
+##### image history
+> docker history **_image_**
+
 ##### remove all stopped containers
 > docker rm -v ${docker ps -aq -f status=exited}
 
