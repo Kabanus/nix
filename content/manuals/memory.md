@@ -9,7 +9,6 @@
 ###### Temporary
 > echo never > /sys/kernel/mm/transparent_hugepage/enabled
 ###### Persistent
-> sed -i -e '/^GRUB_CMDLINE/s/"/ transparent_hugepage=never&/2' /etc/default/grub
-> grub2-mkconfig -o /boot/grub2/grub.cfg
+> sed -i -e '/^GRUB_CMDLINE/s/"/ transparent_hugepage=never&/2' /etc/default/grub && grub2-mkconfig -o /boot/grub2/grub.cfg
 ###### Check
 > cat /sys/kernel/mm/transparent_hugepage/enabled && egrep AnonHugePages /proc/\*/smaps | grep -v "0 kB"
