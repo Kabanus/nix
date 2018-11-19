@@ -8,3 +8,5 @@
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/memory.md)
 # Security
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/security.md)
+# Storage
+> [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/storage.md)
