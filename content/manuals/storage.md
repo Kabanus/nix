@@ -31,6 +31,6 @@ EOF
 ###### Check device
 > ll /dev/oraasm
 
-##### Disk usage root directory no recursive
+##### Disk usage (du) root directory (/) no recursive
 > awk '{if ($2!="/") print $2}' /proc/mounts >> excludes.tmp  
 > du -sh /* -X excludes.tmp | sort -h; rm -f excludes.tmp
