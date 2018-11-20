@@ -20,8 +20,13 @@ EOF
 ###### Check paths
 > multipath -ll **ALIAS**
 
-##### Add UDEV (Oracle ASM)
-1. > echo "ENV{DM_NAME}=="**_SAN_**",SYMLINK+="oraasm/$env{DM_NAME}-**_DATABASE_**", OWNER="ora", GROUP="dba", MODE="0660"" >> /etc/udev/rules.d/99-asm-permissions.rules
-2. > udevadm trigger --attr-match=subsystem=block
+##### Add Oracle ASM
+###### Physical
+> echo "ENV{DM_NAME}=="**_ALIAS_**",SYMLINK+="oraasm/$env{DM_NAME}-**_DATABASE_**", OWNER="ora", GROUP="dba", MODE="0660"" >> /etc/udev/rules.d/99-asm-permissions.rules
+###### Virtual
+1. > /lib/udev/scsi_id --whitelisted --device=/dev/sd**X**
+2. > echo "KERNEL=="sd*", SUBSYSTEM=="block", ENV{ID_SERIAL}=="**_UUID_**", SYMLINK+="oraasm/**_DATABASE_**", OWNER="ora", GROUP="dba", MODE="0660"" >> /etc/udev/rules.d/99-asm-permissions.rules
+###### Make links
+> udevadm trigger --attr-match=subsystem=block
 ###### Check device
-> ll /dev/oraasm/**_SAN_**-**_DATABASE_**
+> ll /dev/oraasm
