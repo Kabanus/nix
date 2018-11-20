@@ -7,9 +7,7 @@ blacklist_exceptions {
 wwid **_LUN_**  
 }  
 EOF
-2. > cat >> /etc/multipath/bindings << OEF  
-**ALIAS** **_LUN_**  
-EOF
+2. > echo "**ALIAS** **_LUN_**" >> /etc/multipath/bindings
 
 ##### Rescan SCSI
 ###### Method #1
