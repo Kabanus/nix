@@ -2,10 +2,10 @@
 > ansible 10.0.0.1, -b -m copy -a 'src=/local_file dest=/remote_file'
 
 ##### ansible exec command
-> ansible **servers** -b -m shell -a 'uptime'  // [servers] from [hosts](https://github.com/Kabanus/nix/blob/master/content/examples/ansible/hosts) file
+> ansible **_servers_** -b -m shell -a 'uptime'  // [servers] from [hosts](https://github.com/Kabanus/nix/blob/master/content/examples/ansible/hosts) file
 
 ##### ansible-playbook run script
-> ansible-playbook -k -b -i 10.0.0.1, **playbook.yml**
+> ansible-playbook -k -b -i 10.0.0.1, **_playbook.yml_**
 
 ###### options
 - \- m // module name  
