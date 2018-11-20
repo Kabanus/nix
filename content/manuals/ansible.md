@@ -5,7 +5,7 @@
 > ansible **_servers_** -b -m shell -a 'uptime'  // [servers] from [hosts](https://github.com/Kabanus/nix/blob/master/content/examples/ansible/hosts) file
 
 ##### ansible-playbook run script
-> ansible-playbook -k -b -i 10.0.0.1, script.yml
+> ansible-playbook -k -b -i 10.0.0.1, **_playbook.yml_**
 
 ###### options
 - \- m // module name  
