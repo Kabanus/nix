@@ -21,7 +21,7 @@ EOF
 > multipath -ll **ALIAS**
 
 ##### Add UDEV (Oracle ASM)
-1. > echo "ENV{DM_NAME}=="**SAN**",SYMLINK+="oraasm/$env{DM_NAME}-**_DATABASE_**", OWNER="ora", GROUP="dba", MODE="0660"" >> /etc/udev/rules.d/99-asm-permissions.rules
+1. > echo "ENV{DM_NAME}=="**_SAN_**",SYMLINK+="oraasm/$env{DM_NAME}-**_DATABASE_**", OWNER="ora", GROUP="dba", MODE="0660"" >> /etc/udev/rules.d/99-asm-permissions.rules
 2. > udevadm trigger --attr-match=subsystem=block
 ###### Check device
-> ll /dev/oraasm/**SAN**-**_DATABASE_**
+> ll /dev/oraasm/**_SAN_**-**_DATABASE_**
