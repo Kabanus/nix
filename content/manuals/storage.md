@@ -16,7 +16,7 @@ EOF
 > rescan-scsi-bus.sh
 
 ##### Rescan LUNs
-> multipath -v3
+> multipath -v2
 ###### Check paths
 > multipath -ll **ALIAS**
 
