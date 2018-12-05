@@ -6,5 +6,5 @@ sed -i -e '/^#HostKey.*ssh_host_rsa_key/s/^.//' /etc/ssh/sshd_config
 sshd -t && service sshd restart
 ```
 
-###### Check SSHD
+###### Check DSA in SSHD
 > nmap --script ssh2-enum-algos -p 22 localhost || sshd -T | grep ^hostkey
