@@ -1,0 +1,2 @@
+###### Hewlett-Packard Re-generate ILO 4 certificate
+> curl -u "login:password" -k -X DELETE https://ip_address/redfish/v1/Managers/1/SecurityService/HttpsCert/
