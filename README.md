@@ -10,3 +10,5 @@
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/security.md)
 # Storage
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/storage.md)
+# Hardware
+> [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/hardware.md)
