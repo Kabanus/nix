@@ -6,8 +6,8 @@
 > let c1 = 3.0 as Double   
 > var v1:String = text
 * type(of:) - узнать тип переменной/константы
-> type(of: c1/v1)
+> type(of: c1)
 * print - вывести значение переменной/константы
-> print(c1/v1)
+> print(v1)
 * "Верблюжья" нотация именования
 > let someConstName:Int
