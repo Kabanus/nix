@@ -9,7 +9,7 @@ let c1:Int = 2
 var c1 = 3.0 as Double
 var v1:String = text
 ```
-### Объявление переменной/константы в одну строку
+#### Объявление переменной/константы в одну строку
 ```
 var one, two, three: Int
 let four = 4, five = 5, six = 6
