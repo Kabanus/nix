@@ -8,6 +8,7 @@ let c2:Int = 2
 ```
 var v1 = 3.0 as Double
 var v2:String = text
+var v3 = "text"
 ```
 #### Объявление в одну строку
 ```
