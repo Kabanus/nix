@@ -23,11 +23,11 @@ let someConstName:Int
 ```
 #### Инкремент
 ```
-v1 += 1 eq v1 = v1 + 1
+v1 += 1 // v1 = v1 + 1
 ```
 #### Конвертация типа
 ```
 var v1 = 1
 var v2 = 2.0
-var v3 = Int(v2) or v1+Int(v2)
+var v3 = v1 + Int(v2)
 ```
