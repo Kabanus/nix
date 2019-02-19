@@ -101,7 +101,7 @@ print(c1.count)
 #### Индексы
 ```
 let c1 = "Hello, Kitty!"
-let index = c1.firstIndex(of: ",") ?? c1.endIndex
-print(c1[...index])
+let index = c1.index(of: ",") ?? c1.endIndex
+print(c1[..<index])
 print(c1[index...])
 ```
