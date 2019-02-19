@@ -65,3 +65,6 @@ let someConstName:Int
 ```
 Группы значений
 ```
+# Типы данных
+* ValueType - значение
+* ReferenceType - ссылка на объект / область памяти
