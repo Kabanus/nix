@@ -68,4 +68,11 @@ let someConstName:Int
 # Типы данных
 * Value Type - значение
 * Reference Type - ссылка на объект / область памяти
+#### Многострочное значение
+```
+let c1 = """
+Hello
+Kitty
+"""
+```
 #### Alias
