@@ -65,8 +65,14 @@ let someConstName:Int
 Группы значений
 ```
 # Типы данных
-* Value Type - значение
-* Reference Type - ссылка на объект / область памяти
+#### Value Type - значение
+* Сравнение через == (сравнивается значение)
+* При присвоении или передаче в функции - создается копия значения
+* Пример: Int, Double, String, Array, Dictionary, Set, Struct, Tuple
+#### Reference Type - ссылка на объект / область памяти
+* Cравнение через === (ссылка на объект)
+* При присвоении или передаче в функции - копируется ссылка на объект
+* Пример: создаваемые объекты в коде и ссылки на них
 #### Многострочное значение
 ```
 let c1 = """
@@ -74,10 +80,16 @@ Hello
 Kitty
 """
 ```
-#### Substring // подстрока
+#### Подстрока // Substring
 ```
 let c1 = "123"
 let c2 = c1.dropLast(2)
 print(c2)
 ```
 > Выводится значение c2 - **1**, т. к. были отброшены последние два символа
+#### Алиас // Alias
+```
+typealias MyString = String
+typealias PersonTuple = (firstName: String, secondName: String, age: Int, car: Bool)
+var personIvan: PersonTuple = ("Ivan", "Ivanov", 20, false)
+```
