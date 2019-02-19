@@ -93,3 +93,15 @@ typealias MyString = String
 typealias PersonTuple = (firstName: String, secondName: String, age: Int, car: Bool)
 var personIvan: PersonTuple = ("Ivan", "Ivanov", 20, false)
 ```
+#### Количество символов в строке
+```
+let c1 = "Hello, Kitty!"
+print(c1.count)
+```
+#### Индексы
+```
+let c1 = "Hello, Kitty!"
+let index = c1.firstIndex(of: ",") ?? c1.endIndex
+print(c1[...index])
+print(c1[index...])
+```
