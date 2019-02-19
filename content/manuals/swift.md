@@ -74,4 +74,10 @@ Hello
 Kitty
 """
 ```
-#### Alias
+#### Substring // подстрока
+```
+let c1 = "123"
+let c2 = c1.dropLast(2)
+print(c2)
+c2 = 1
+```
