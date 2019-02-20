@@ -56,7 +56,7 @@ let someConstName:Int
 ```
 Ключи : Значения
 ```
-#### Набор // Set
+#### Множество // Set
 ```
 Значения
 ```
@@ -104,4 +104,10 @@ let c1 = "Hello, Kitty!"
 let index = c1.index(of: ",") ?? c1.endIndex
 print(c1[..<index])
 print(c1[index...])
+```
+# Кортежи // Tuples
+```
+let c1 = ("text", 1)
+var v1 = (a: "text", b: 1) // кортеж с метками для значений
+print(v1.a)
 ```
