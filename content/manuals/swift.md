@@ -139,3 +139,12 @@ if letterA != "A" {
   print("not a")
 }
 ```
+```
+? - if
+: - else
+let letterB = "B"
+letterB == "B" ? print("true B") : print("not B")
+let letters = letterA + (!letterB.isEmpty ? letterB : "")
+print(letters)
+```
+#### Switch
