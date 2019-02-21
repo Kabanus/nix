@@ -120,3 +120,22 @@ var b = 2
 (a, b) = (b ,a)
 ```
 # Условные операторы
+* if else - простые условия
+* switch - много условий
+* guard - ранний выход
+#### if else
+```
+let letterA = "A"
+if letterA == "A" {
+  print(true)
+} else if letterA == "B" {
+  print("else1")
+} else {
+  print("false")
+}
+```
+```
+if letterA != "A" {
+  print("not a")
+}
+```
