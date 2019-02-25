@@ -185,3 +185,29 @@ default:
   print("default")
 }
 ```
+```
+var a = 17
+switch a {
+case 1..<10:
+  print("<10")
+case 10..<20:
+  print(">10")
+case 20..<30:
+  print(">20")
+default:
+  print("")
+}
+```
+```
+let letters = (a: "А", b: "Б", c: "Ц", d: "Д", e: "Е")
+switch letters {
+case (_, _, _, _, _):
+  print("Любые значения")
+case ("А", _, _, _, _):
+  print("Найдена А")
+case (_, _, "Ц", _, "Е"):
+  print("Найдены Ц и Е")
+default:
+  print("default")
+}
+```
