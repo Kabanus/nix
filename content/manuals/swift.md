@@ -148,3 +148,40 @@ let letters = letterA + (!letterB.isEmpty ? letterB : "")
 print(letters)
 ```
 #### Switch
+```
+let text: String = "test55"
+switch text {
+case "test":
+  print("1")
+case "test2", "test3":
+  print("2")
+default:
+  print("true default 1")
+}
+```
+#### Where
+```
+var a = 11
+switch a {
+case _ where a % 3 == 2: // _ (нижнее подчеркивание) - любое значение
+  print(a)
+default:
+  print("")
+}
+```
+#### Fallthrough
+```
+var a = 2
+switch a {
+case 1:
+  print("a=1")
+  fallthrough
+case 2:
+  print("a=2")
+  fallthrough
+case 3:
+  print("a=3")
+default:
+  print("default")
+}
+```
