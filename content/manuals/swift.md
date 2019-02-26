@@ -330,3 +330,31 @@ for1: for i in 1...10 {
   }
 }
 ```
+#### Where
+```
+for i in 1..<10 where i % 3 == 0 {
+  print("\(i) = ok")
+}
+```
+#### Inner
+```
+var sum = 0
+for number1 in 1...10 {
+  sum += number1
+  for number2 in 1...10 {
+    sum += number2
+  }
+}
+print(sum)
+```
+#### While
+```
+var i = 0
+while i < 10{
+  i += 1
+  if i == 5 {
+    continue
+  }
+  print(i)
+}
+```
