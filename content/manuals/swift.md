@@ -211,3 +211,66 @@ default:
   print("default")
 }
 ```
+#### If vs Switch
+```
+// По-новому
+let age = Int.random(in: 0 ... 100)
+print(age)
+if age <= 10 {
+  print("Малыш")
+} else if 11...15 ~= age {
+  print("Подросток")
+} else if 16...20 ~= age {
+  print("Студент")
+} else if 21...30 ~= age {
+  print("Молодой")
+} else if 31...40 ~= age {
+  print("Семейный")
+} else if 41...60 ~= age {
+  print("Опытный")
+} else if age > 60 {
+  print("Пожилой")
+}
+```
+```
+// По-старому
+let age = Int.random(in: 0 ... 100)
+print(age)
+if age <= 10{
+    print("малыш")
+}else if age > 10 && age <= 15{
+    print("подросток")
+}else if age > 15 && age <= 20{
+    print("студент")
+}else if age > 20 && age <= 30{
+    print("молодой")
+}else if age > 30 && age <= 40{
+    print("семейный")
+}else if age > 40 && age <= 60{
+    print("опытный")
+}else if age > 60 {
+    print("пожилой")
+}
+```
+```
+let age = Int.random(in: 0 ... 100)
+print(age)
+switch age {
+case 0...10:
+  print("Малыш")
+case 11...15:
+  print("Подросток")
+case 16...20:
+  print("Студент")
+case 21...30:
+  print("Молодой")
+case 31...40:
+  print("Семейный")
+case 41...60:
+  print("Опытный")
+case 60...:
+  print("Пожилой")
+default:
+  print("default")
+}
+```
