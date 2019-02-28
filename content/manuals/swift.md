@@ -358,3 +358,28 @@ while i < 10{
   print(i)
 }
 ```
+#### Repeat-While
+```
+var i = 0
+repeat {
+  i -= 1
+  print(i)
+} while (i>0)
+```
+#### Stride
+```
+for i in stride(from: 10, to: 20, by: 2) { // 20 не включается
+  print(i)
+}
+```
+```
+for i in stride(from: 10, through: 20, by: 2) { // 20 включается
+  print(i)
+}
+```
+```
+// Обратно
+for i in stride(from: 20, through: 10, by: 2) {
+  print(i)
+}
+```
