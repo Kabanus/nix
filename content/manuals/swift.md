@@ -455,14 +455,35 @@ if a != nil {
   print("\(a!) not nil")
 }
 ```
-// Присвоение значения по умолчанию (coalescing)
-```
-var nullValue: Int?
-var mainValue = nullValue ?? 0
-```
 #### Optional Chaining
 ```
 var str: String?
-var count = str?.characters.count // "?" - если значение str не пусто - выполнить дальнейшие действия, иначе присвоить nil
+var count = str?.count // "?" - если значение str не пусто - выполнить дальнейшие действия, иначе присвоить nil
+var count = str!.count // "!" - извлечь значение в любом случае, если значения нет - ошибка
 print(count)
+```
+#### NilCoalescing
+```
+// Присвоение значения по умолчанию
+var nullValue: Int?
+var mainValue = nullValue ?? 0
+```
+#### Tuple
+```
+// Опциональный кортеж
+var optTuple: (Int, str:String)? = (6, "text")
+print(optTuple!.0)
+print(optTuple!.str)
+```
+```
+// Опциональные значения кортежа
+var optTupleValues: (Int?, String?) = (1, "text2")
+print(optTupleValues.0!)
+print(optTupleValues.1!)
+```
+```
+// Опциональный кортеж и опциональные значения
+var optTupleWithValues: (Int?, String?)? = (3, "text3")
+print(optTupleWithValues!.0!)
+print(optTupleWithValues!.1!)
 ```
