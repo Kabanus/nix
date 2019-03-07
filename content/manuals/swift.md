@@ -468,7 +468,7 @@ print(count)
 var nullValue: Int?
 var mainValue = nullValue ?? 0
 ```
-#### Tuple
+#### Optional Tuples
 ```
 // Опциональный кортеж
 var optTuple: (Int, str:String)? = (6, "text")
@@ -486,4 +486,61 @@ print(optTupleValues.1!)
 var optTupleWithValues: (Int?, String?)? = (3, "text3")
 print(optTupleWithValues!.0!)
 print(optTupleWithValues!.1!)
+```
+```
+Неявное извлечение "!" возможно только для всего кортежа, а не для его отдельных элементов
+```
+#### Convert
+```
+// При конвертации в Int/Double возвращается Optional, если конвертация не удается - возвращается nil
+// При конвертации в String возвращается String
+var strValue = "0"
+var intValue = 10
+let intVal = Int(strValue)
+type(of: intVal)
+print(intVal!)
+```
+#### Optional Switch
+```
+let str: String? = "text"
+switch (str) {
+case .none:
+  print("no text")
+case .some (let txt):
+  print("text is: \(txt)")
+}
+```
+#### Optional Inner
+```
+// Контейнер внутри контейнера
+let constVal: String????? = "text"
+print(constVal!!!!!)
+```
+#### Binding Chaining
+```
+// Optional Binding + Optional Chaining
+var str:String? = "text"
+if let count = str?.count {
+  print(count)
+}else{
+  print("count is nil")
+}
+```
+```
+// Без Optional Chaining
+var str:String? = "text"
+if str != nil {
+  let count = str!.count
+  print(count)
+}else{
+  print("count is nil")
+}
+```
+```
+// Распечатать в одну строку все буквы из текста, исключая пробелы
+var text:String? = "Swift has built-in support for checking API availability, which ensures that you don’t accidentally use APIs that are unavailable on a given deployment target"
+for char in text! {
+  if char != " "{
+    print(char, terminator: "")}
+}
 ```
