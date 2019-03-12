@@ -549,5 +549,49 @@ for char in text! {
 * Метод - функция внутри определенного типа (class, struct, enum)
 * Функция:
   * может возврящать значение (любой тип)
-  * не может возврящать значение - () или Void
+  * не может возвращать значение - () или Void
 * Функцию можно объявлять внутри другой функции (Nested Function)
+#### Объявление функции без параметров
+```
+func printReady(){
+  print("ready")
+}
+printReady()
+```
+#### Объявление функции с параметрами
+```
+func sendParam(str: String, index: Int){ // параметры являются константами
+  print(str,index)
+}
+sendParam(str: "text", index: 1) // при вызове имена параметров обязательны
+```
+#### Объявление функции с возвратом результата
+```
+func sum(int1: Int, int2: Int) -> Int{
+  return int1+int2;
+}
+print(sum(int1: 2, int2: 5))
+```
+#### Объявление функции без возврата результата
+```
+func returnVoid1() -> Void{ // Void лучше ()
+  print("void")
+}
+func returnVoid2() -> (){
+  print("void")
+}
+func returnVoid3(){
+  print("void")
+}
+returnVoid1()
+returnVoid2()
+returnVoid3()
+```
+#### Значение по-умолчанию для параметров
+```
+func useDefaultValues(str: String = "default", index: Int = 5){
+  print(str,index)
+}
+useDefaultValues()
+useDefaultValues(str: "hello", index: 10)
+```
