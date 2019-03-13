@@ -659,10 +659,33 @@ func addStrValue (_ str: String) -> String {
 var addStrMethod = addStrValue
 print(addStrMethod("new"))
 ```
-``` 
+```
+// Присваивание функции в переменную (с подходящими параметрами и возвращаемым значением)
 func sum(_ int1: Int, _ int2: Int) -> Int {
   return int1 + int2
 }
 var sumMethod: (Int, Int) -> Int = sum
 print(sumMethod(1,2))
 ```
+#### FuncAsReturn
+```
+// Функция, как тип возвращаемого значения другой функции
+func plus(p1: Int, p2: Int) -> Int {
+  return p1 + p2
+}
+func minus(p1: Int, p2: Int) -> Int {
+  return p1 - p2
+}
+// возврат функции в зависимости от параметра
+func returnFuncType(oper: Bool) -> (Int, Int) -> Int {
+  if oper {
+    return plus
+  } else {
+    return minus
+  }
+}
+// сначала возвращается функция, затем она вызывается с параметрами
+print(returnFuncType(oper: true)(5,2))
+print(returnFuncType(oper: false)(5,2))
+```
+#### FuncAsParam
