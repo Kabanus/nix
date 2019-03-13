@@ -595,3 +595,74 @@ func useDefaultValues(str: String = "default", index: Int = 5){
 useDefaultValues()
 useDefaultValues(str: "hello", index: 10)
 ```
+#### InOut
+```
+// функция измененяет значения внешней переменной
+// (параметр метода хранит ссылку на переменную, а не копию значнения)
+// в этом случае параметр функции - не константа
+func inOutFunc(index: inout Int){
+  index += 1
+}
+var indexVar = 7
+inOutFunc(index: &indexVar)
+print(indexVar)
+```
+#### Label
+```
+// метка - не имя переменной, а ее более подробное описание
+// если не указать метку - она автоматически создастся от имени параметра
+func convertText(textForConversion text: String, index: Int){
+  print(text,index)
+}
+convertText(textForConversion: "new text", index: 1)
+```
+```
+// отключение меток
+func omitLabels(_ p1: Int, _ p2: Int, str: String){
+  print(p1,p2)
+}
+omitLabels(5,7, str: "text")
+```
+#### Функция с возвратом кортежа
+```
+func sum(int1: Int, int2: Int) -> (Int, String) {
+  return (int1 + int2, "success")
+}
+print(sum(int1: 2, int2: 5))
+var tupleResult = sum(int1: 10, int2: 20)
+print(tupleResult.0) // первый элемент кортежа - 30
+print(tupleResult.1) // второй элемент кортежа - success
+```
+```
+// Вовзрат кортежа с параметром типа кортежа
+func funcTuple(tupleParam p: (Int, Int)) -> (Int, String) {
+  return (p.0 + p.1, "success")
+}
+print(funcTuple(tupleParam: (2, 5)))
+```
+```
+// Добавить имена параметров возвращаемого кортежа
+func sum2(tupleParam p: (Int, Int)) -> (sum: Int, result: String) {
+  return (p.0 + p.1, "success")
+}
+var sumTuple = sum2(tupleParam: (2,5))
+print(sumTuple.result)
+print(sumTuple.sum)
+```
+#### FuncAsVar
+```
+// Присваивание функции в переменную
+func addStrValue (_ str: String) -> String {
+  return str + " added value"
+}
+// var addStrMethod: (String) -> String = addStrValue
+var addStrMethod = addStrValue
+print(addStrMethod("new"))
+```
+``` 
+func sum(_ int1: Int, _ int2: Int) -> Int {
+  return int1 + int2
+}
+var sumMethod: (Int, Int) -> Int = sum
+print(sumMethod(1,2))
+```
