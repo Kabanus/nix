@@ -689,3 +689,83 @@ print(returnFuncType(oper: true)(5,2))
 print(returnFuncType(oper: false)(5,2))
 ```
 #### FuncAsParam
+```
+func sum(p1: Int, p2: Int) -> Int {
+  return p1 + p2
+}
+func extract(p1: Int, p2: Int) -> Int {
+  return p1 - p2
+}
+func funcParam(funcType: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+  print(funcType(a,b))
+}
+funcParam(funcType: sum, 2,5)
+funcParam(funcType: extract, 5,1)
+```
+#### Optional
+```
+func testParamOptional(str: String?) {
+  if let str = str {
+    print(str)
+  }
+}
+testParamOptional(str: nil)
+```
+```
+// Optional в возвращаемом типе
+func testReturnOptional(str: String) -> Int? {
+  return str.count
+}
+print(testReturnOptional(str: "test")!)
+```
+```
+// Optional в возвращаемом типе и параметре
+func testAllOptional(str: String?) -> Int? {
+  return str?.count
+}
+print(testAllOptional(str: "test")!)
+```
+```
+// implicit unwrapping
+func testImplicitOptParam(str: String!) -> Int {
+  return str.count
+}
+var a: String? = "test"
+print(testImplicitOptParam(str: a))
+```
+#### NestedFunc
+```
+func returnFuncType(oper: Bool) -> (Int, Int) -> Int {
+  var result: String
+  // внутренние функции имеют доступ к переменным внешней функции
+  func plus (p1: Int, p2: Int) -> Int {
+    return p1 + p2
+  }
+  func minus (p1: Int, p2: Int) -> Int {
+    return p1 - p2
+  }
+  if oper {
+    return plus
+  } else {
+    return minus
+  }
+}
+print(returnFuncType(oper: true)(5,2))
+print(returnFuncType(oper: false)(5,2))
+```
+#### Overload
+* Overloading - перезагрузка функции (метода) - название совпадает, но параметры и тип возвращаемого значения могут отличаться
+```
+func plus (p1: Int, p2: Int) -> Int {
+  return p1 + p2
+}
+func plus (p1: Double, p2: Double) -> Double {
+  return p1 + p2
+}
+func plus () {
+  print("void")
+}
+print(plus(p1: 10, p2: 20))
+print(plus(p1: 30.3, p2: 40.4))
+plus()
+```
