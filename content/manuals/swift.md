@@ -769,3 +769,25 @@ print(plus(p1: 10, p2: 20))
 print(plus(p1: 30.3, p2: 40.4))
 plus()
 ```
+#### TypeAlias
+```
+typealias MethodType = (String, Bool, Int) -> (Int, String, Bool, String)
+func newMethod (_ str: String, _ b: Bool, _ i: Int) -> (Int, String, Bool, String) {
+  print (str, b, i)
+  return (i, "test", true, "test2")
+}
+var printVar: MethodType = newMethod
+print(printVar("test", true, 1))
+```
+```
+// функция, как параметр другой функции
+func sum (_ i1: Int, _ i2: Int) -> Int {
+  return i1 + i2
+}
+typealias SumType = (Int, Int) -> Int
+var sumMethod: SumType = sum
+func secondFunc (_ sumMethod: SumType, _ a: Int, _ b: Int) {
+  print(sumMethod(a, b))
+}
+secondFunc(sum, 10, 20)
+```
