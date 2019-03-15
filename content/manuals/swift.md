@@ -877,3 +877,61 @@ if let sum = successWithNil2 {
     print("fail")
 }
 ```
+# Замыкания / Closure
+* Closure - анонимная функция, без слова func
+```
+let testClosure1:() -> () = {
+  print("test")
+}
+let testClosure2:() -> Void = {
+  print("test")
+}
+let testClosure3 = {
+  print("test")
+}
+testClosure1()
+testClosure2()
+testClosure3()
+```
+```
+// Замыкание с параметром
+var printNumber: (Int) -> () = { (number) in
+  print(number)
+}
+printNumber(5)
+```
+```
+// Замыкание с параметром и возвращаемым значением
+var printTextAndNumber: (Int, String) -> (String) = { (number, text) in
+  return "\(text): \(number)"
+}
+print(printTextAndNumber(5, "test text"))
+```
+```
+// Замыкание для подсчета суммы
+var sum1: (Int, Int) -> Int = { (number1, number2) in
+  return number1 + number2
+}
+// параметры без скобок
+var sum2: (Int, Int) -> Int = { number1, number2 in
+  return number1 + number2
+}
+// без указания параметров и in
+var sum3: (Int, Int) -> Int = { return $0 + $1}
+// без return
+var sum4: (Int, Int) -> Int = { $0 + $1 }
+
+print(sum1(1,2))
+print(sum2(3,4))
+print(sum3(5,6))
+print(sum4(7,8))
+```
+```
+// Работа с переменной, а не с константой
+var testConst: (String) -> String = {
+  var str = $0
+  str.append(" - new text")
+  return str
+}
+print(testConst("base text"))
+```
