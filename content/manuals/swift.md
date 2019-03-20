@@ -935,3 +935,31 @@ var testConst: (String) -> String = {
 }
 print(testConst("base text"))
 ```
+```
+// Example
+var customerInLine = ["Chris", "Alex", "Ewe", "Barry", "Daniella"]
+print(customerInLine.count)
+
+let customerProvider = { customerInLine.remove(at: 0) }
+print(customerInLine.count)
+
+print("Now serving \(customerProvider())!")
+
+print(customerInLine.count)
+```
+```
+// Использование параметров функции для их передачи в замыкание
+typealias TwoDigitsFunction = (Int, Int) -> Int
+func testCalc(_ number1:Int, _ number2:Int, _ calcFunc:TwoDigitsFunction) -> Int {
+  return calcFunc(number1,number2) * 100
+}
+
+var sum = testCalc(4,2, { $0 + $1 })
+var minus = testCalc(2,5, { $0 - $1 })
+var multiple = testCalc(4,8, { $0 * $1 })
+var divide = testCalc(11,3, { $0 / $1 })
+
+print(sum)
+print(minus)
+print(multiple)
+print(divide)
