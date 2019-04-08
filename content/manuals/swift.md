@@ -963,3 +963,24 @@ print(sum)
 print(minus)
 print(multiple)
 print(divide)
+```
+```
+// Специальный синтаксис для передачи замыканий
+typealias TwoDigitsFunction = (Int, Int) -> Int
+func testCalc(_ i1:Int, _ i2:Int, _ calcFunc:TwoDigitsFunction) -> Int {
+  return calcFunc(i1,i2) * 100
+}
+
+var sum = testCalc(4,2) { $0 + $1 }
+var minus = testCalc(2,5) { $0 - $1 }
+var multiple = testCalc(4,8) { $0 * $1 }
+var divide = testCalc(11,3) { $0 / $1 }
+
+print(sum)
+print(minus)
+print(multiple)
+print(divide)
+```
+```
+// autoclosure
+```
