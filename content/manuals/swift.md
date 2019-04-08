@@ -983,4 +983,24 @@ print(divide)
 ```
 ```
 // autoclosure
+var str = "text"
+
+func checkStr(textCheckClosure: () -> Bool) {
+  if textCheckClosure() {
+    print("ok")
+  }
+}
+
+checkStr(textCheckClosure: { return str.contains("t")})
+checkStr(textCheckClosure: { str.contains("e")})
+checkStr() {str.contains("x")}
+checkStr {str.contains("x")}
+
+func checkStr2(textCheckClosure: @autoclosure () -> Bool) {
+  if textCheckClosure() {
+    print("ok")
+  }
+}
+
+checkStr2(textCheckClosure: str.contains("t"))
 ```
