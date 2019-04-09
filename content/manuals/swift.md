@@ -1004,3 +1004,25 @@ func checkStr2(textCheckClosure: @autoclosure () -> Bool) {
 
 checkStr2(textCheckClosure: str.contains("t"))
 ```
+```
+// Захват переменных
+var a = 10
+var b = 15
+
+let closure1 = { print(a,b) }
+
+closure1()
+
+a = 20
+b = 25
+
+closure1()
+
+func testCapture() {
+  print("captured:")
+  print(a,b)
+  print()
+}
+
+testCapture()
+```
