@@ -7,5 +7,11 @@
 ##### pod info
 > kubectl describe pod NAME
 
-##### 
-> 
+##### create service
+> kubectl expose rc APPNAME --type=LoadBalancer --name NAME
+
+##### show services
+> kubectl get services -o wide
+
+##### show all
+> kubectl get all -o wide
