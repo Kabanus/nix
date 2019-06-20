@@ -4,6 +4,8 @@
 # Ansible
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/docker.md)  
 > [Examples](https://github.com/Kabanus/nix/tree/master/content/examples/ansible)
+# Kubernetes
+> [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/kubernetes.md)
 # Memory
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/memory.md)
 # Security
