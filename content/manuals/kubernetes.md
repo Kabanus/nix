@@ -16,6 +16,9 @@
 ##### show detail
 > kubectl describe node|pod|rc|svc NAME|all
 
+##### show doc
+> kubectl explain node|pod|rc|svc
+
 ###### options
 * -o wide // verbose
 * -o yaml // YAML
