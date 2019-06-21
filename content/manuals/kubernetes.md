@@ -1,17 +1,21 @@
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
-##### show pods
-> kubectl get pods -o wide
-
-##### pod info
-> kubectl describe pod NAME
-
-##### create service
+##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
-##### show services
-> kubectl get services -o wide
+##### scale replication controller
+> kubectl scale rc NAME --replicas=NUMBER
 
-##### show all
-> kubectl get all -o wide
+##### cluster info
+> kubectl cluster-info
+
+##### show info
+> kubectl get node|pod|rc|svc NAME|all
+
+##### show detail
+> kubectl describe node|pod|rc|svc NAME|all
+
+###### options
+* -o wide // verbose
+* -o yaml // YAML
