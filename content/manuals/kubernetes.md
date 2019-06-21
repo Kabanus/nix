@@ -24,3 +24,18 @@
 * метаданные (metadata) – включают имя, пространство имен, метки и другую информацию о модуле
 * спецификация (spec) – содержит фактическое описание содержимого модуля, например контейнеры модуля, тома и другие данные
 * статус (status) – содержит текущую информацию о работающем модуле, такую как условие, в котором находится модуль, описание и статус каждого контейнера, внутренний IP модуля, и другую базовую информацию
+
+###### YAML example
+```
+apiVersion: v1              // API version
+kind: Pod                   // description
+metadata:
+  name: kubia-manual        // name
+spec:
+  containers:
+  – image: kabanus/kubia    // image
+    name: kubia             // container name
+    ports:
+    – containerPort: 8080   // port
+      protocol: TCP         // proto
+```
