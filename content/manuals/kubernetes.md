@@ -1,6 +1,9 @@
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
+##### create module
+> kubectl create -f FILENAME.yaml
+
 ##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
@@ -30,15 +33,15 @@
 
 ###### YAML example
 ```
-apiVersion: v1              // API version
-kind: Pod                   // description
+apiVersion: v1                  # API version
+kind: Pod                       # description
 metadata:
-  name: kubia-manual        // name
+  name: kubia-manual            # module name
 spec:
   containers:
-  – image: kabanus/kubia    // image
-    name: kubia             // container name
-    ports:
-    – containerPort: 8080   // port
-      protocol: TCP         // proto
+    – name: kubia               # container name
+      image: kabanus/kubia      # image
+      ports:
+        – containerPort: 8080   # port
+          protocol: TCP         # proto
 ```
