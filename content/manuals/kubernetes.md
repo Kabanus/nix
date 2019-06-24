@@ -16,6 +16,11 @@ kubectl port-forward MODNAME LOCAL:MODULE
 ##### scale replication controller
 > kubectl scale rc NAME --replicas=NUMBER
 
+##### delete resources
+> kubectl delete node|pod|rc|svc|ns NAME
+> kubectl delete pod -l creation_method=manual
+> kubectl delete all --all
+
 ##### add label
 > kubectl label node|pod NAME LABEL=VALUE
 
@@ -26,13 +31,13 @@ kubectl port-forward MODNAME LOCAL:MODULE
 > kubectl cluster-info
 
 ##### show info
-> kubectl get node|pod|rc|svc NAME|all
+> kubectl get node|pod|rc|svc|ns NAME|all
 
 ##### show detail
-> kubectl describe node|pod|rc|svc NAME|all
+> kubectl describe node|pod|rc|svc|ns NAME|all
 
 ##### show doc
-> kubectl explain node|pod|rc|svc
+> kubectl explain node|pod|rc|svc|ns
 
 ###### options
 * -o wide // verbose
@@ -44,6 +49,7 @@ kubectl port-forward MODNAME LOCAL:MODULE
 * * -l 'LABEL!=VALUE' // not eq
 * * -l LABEL in (VALUE1,VALUE2) // in
 * * -l LABEL notin (VALUE1,VALUE2) // not in
+* --namespace NAME // name space
 
 ###### YAML
 * метаданные (metadata) – включают имя, пространство имен, метки и другую информацию о модуле
