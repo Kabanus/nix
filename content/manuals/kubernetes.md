@@ -41,9 +41,9 @@ kubectl port-forward MODNAME LOCAL:MODULE
 * --show-labels // labels
 * -L LABEL1,LABEL2 // column per label
 * -l LABEL // laber selector
-** 'LABEL!=VALUE' // not eq
-** LABEL in (VALUE1,VALUE2) // in
-** LABEL notin (VALUE1,VALUE2) // not in
+* * 'LABEL!=VALUE' // not eq
+* * LABEL in (VALUE1,VALUE2) // in
+* * LABEL notin (VALUE1,VALUE2) // not in
 
 ###### YAML
 * метаданные (metadata) – включают имя, пространство имен, метки и другую информацию о модуле
