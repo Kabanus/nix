@@ -25,6 +25,7 @@
 ###### options
 * -o wide // verbose
 * -o yaml // YAML
+* -o json // JSON
 
 ###### YAML
 * метаданные (metadata) – включают имя, пространство имен, метки и другую информацию о модуле
@@ -39,9 +40,10 @@ metadata:
   name: kubia-manual            # module name
 spec:
   containers:
-    – name: kubia               # container name
+    - name: kubia               # container name
       image: kabanus/kubia      # image
       ports:
-        – containerPort: 8080   # port
+        - containerPort: 8080   # port
           protocol: TCP         # proto
+
 ```
