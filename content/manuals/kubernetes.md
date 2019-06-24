@@ -11,7 +11,7 @@
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
 ##### port forwarding
-kubectl port-forward MODNAME local:module
+kubectl port-forward MODNAME LOCAL:MODULE
 
 ##### scale replication controller
 > kubectl scale rc NAME --replicas=NUMBER
