@@ -4,11 +4,23 @@
 ##### create module
 > kubectl create -f FILENAME.yaml
 
+##### show module logs
+> kubectl logs MODNAME -c CONTNAME
+
 ##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
+##### port forwarding
+kubectl port-forward MODNAME local:module
+
 ##### scale replication controller
 > kubectl scale rc NAME --replicas=NUMBER
+
+##### add label
+> kubectl label pod NAME LABEL=VALUE
+
+##### modify label
+> kubectl label pod NAME LABEL=VALUE --overwrite
 
 ##### cluster info
 > kubectl cluster-info
@@ -26,6 +38,8 @@
 * -o wide // verbose
 * -o yaml // YAML
 * -o json // JSON
+* --show-labels // labels
+* -L LABEL1,LABEL2 // column per label
 
 ###### YAML
 * метаданные (metadata) – включают имя, пространство имен, метки и другую информацию о модуле
