@@ -56,7 +56,12 @@ apiVersion: v1                  # API version
 kind: Pod                       # description
 metadata:
   name: kubia-manual            # module name
+  labels:
+    creation_method: manual     # label
+    env: prod                   # label
 spec:
+  nodeSelector:
+    gpu: "true"                 # select node
   containers:
     - name: kubia               # container name
       image: kabanus/kubia      # image
