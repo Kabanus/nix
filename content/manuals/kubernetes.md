@@ -17,8 +17,8 @@ kubectl port-forward MODNAME LOCAL:MODULE
 > kubectl scale rc NAME --replicas=NUMBER
 
 ##### delete resources
-> kubectl delete node|pod|rc|svc|ns NAME
-> kubectl delete pod -l creation_method=manual
+> kubectl delete node|pod|rc|svc|ns NAME   
+> kubectl delete pod -l creation_method=manual   
 > kubectl delete all --all
 
 ##### add label
