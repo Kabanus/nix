@@ -77,9 +77,9 @@ spec:
       ports:
         - containerPort: 8080   # port
           protocol: TCP         # proto
-      livenessProbe:            # Survivability check
-        httpGet:                # Method: HTTP GET
+      livenessProbe:            # survivability check
+        httpGet:                # method: HTTP GET
           path: /               # HTTP request path
           port: 8080            # port
-        initialDelaySeconds: 15 # First check delay
+        initialDelaySeconds: 15 # first check delay
 ```
