@@ -7,6 +7,9 @@
 ##### show module logs
 > kubectl logs MODNAME -c CONTNAME
 
+##### show previous logs
+> kubectl logs PODNAME --previous
+
 ##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
@@ -74,5 +77,9 @@ spec:
       ports:
         - containerPort: 8080   # port
           protocol: TCP         # proto
-
+      livenessProbe:            # Survivability check
+        httpGet:                # Method: HTTP GET
+          path: /               # HTTP request path
+          port: 8080            # port
+        initialDelaySeconds: 15 # First check delay
 ```
