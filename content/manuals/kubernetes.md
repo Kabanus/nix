@@ -59,10 +59,10 @@ kubectl port-forward MODNAME LOCAL:MODULE
 * спецификация (spec) – содержит фактическое описание содержимого модуля, например контейнеры модуля, тома и другие данные
 * статус (status) – содержит текущую информацию о работающем модуле, такую как условие, в котором находится модуль, описание и статус каждого контейнера, внутренний IP модуля, и другую базовую информацию
 
-###### YAML example
+###### YAML example POD
 ```
 apiVersion: v1                  # API version
-kind: Pod                       # description
+kind: Pod                       # module type
 metadata:
   name: kubia-manual            # module name
   labels:
@@ -82,4 +82,25 @@ spec:
           path: /               # HTTP request path
           port: 8080            # port
         initialDelaySeconds: 15 # first check delay
+```
+###### YAML example Replication Contgroller
+```
+apiVersion: v1
+kind: ReplicationController     # module type
+metadata:
+  name: kubia
+spec:
+  replicas: 3                   # replicas sum
+  selector:
+    app: kubia
+  template:                     # new modules template
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
+        ports:
+        - containerPort: 8080
 ```
