@@ -69,7 +69,7 @@ kubectl port-forward MODNAME LOCAL:MODULE
 * Exists – модуль должен содержать метку с указанным ключом (значение не важно). При использовании этого оператора не следует указывать поле values;
 * DoesNotExist – модуль не должен содержать метку с указанным ключом. Свойство values не должно быть указано.
 
-###### YAML example POD
+###### YAML example Pod
 ```
 apiVersion: v1                  # API version
 kind: Pod                       # module type
@@ -163,4 +163,21 @@ spec:
       containers:
       - name: main
         image: luksa/ssd-monitor
+```
+###### YAML example Job
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: batch-job
+spec:
+  template:
+    metadata:
+      labels:
+        app: batch-job
+    spec:
+      restartPolicy: OnFailure    # restart policy, can't be "always"
+      containers:
+      - name: main
+        image: luksa/batch-job
 ```
