@@ -10,6 +10,9 @@
 ##### show previous logs
 > kubectl logs PODNAME --previous
 
+##### edit resource
+kubectl edit node|pod|rc|svc|ns NAME
+
 ##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
@@ -21,7 +24,8 @@ kubectl port-forward MODNAME LOCAL:MODULE
 
 ##### delete resources
 > kubectl delete node|pod|rc|svc|ns NAME   
-> kubectl delete pod -l creation_method=manual   
+> kubectl delete pod -l creation_method=manual  
+> kubectl delete rc NAME --cascade=false // don't delete pods
 > kubectl delete all --all
 
 ##### add label
@@ -103,4 +107,24 @@ spec:
         image: luksa/kubia
         ports:
         - containerPort: 8080
+```
+###### YAML example Replica Set
+```
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: kubia
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia
+  template:
+    metadata:
+      labels:
+        app: kubia
+    spec:
+      containers:
+      - name: kubia
+        image: luksa/kubia
 ```
