@@ -25,7 +25,7 @@ kubectl port-forward MODNAME LOCAL:MODULE
 ##### delete resources
 > kubectl delete node|pod|rc|svc|ns NAME   
 > kubectl delete pod -l creation_method=manual  
-> kubectl delete rc NAME --cascade=false // don't delete pods
+> kubectl delete rc NAME --cascade=false // don't delete pods   
 > kubectl delete all --all
 
 ##### add label
