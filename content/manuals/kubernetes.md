@@ -63,7 +63,7 @@ kubectl port-forward MODNAME LOCAL:MODULE
 * спецификация (spec) – содержит фактическое описание содержимого модуля, например контейнеры модуля, тома и другие данные
 * статус (status) – содержит текущую информацию о работающем модуле, такую как условие, в котором находится модуль, описание и статус каждого контейнера, внутренний IP модуля, и другую базовую информацию
 
-###### Вхождения
+###### Выражения для matchExpressions
 * In – значение метки должно совпадать с одним из указанных значений values;
 * NotIn – значение метки не должно совпадать с любым из указанных значений values;
 * Exists – модуль должен содержать метку с указанным ключом (значение не важно). При использовании этого оператора не следует указывать поле values;
@@ -93,7 +93,7 @@ spec:
           port: 8080            # port
         initialDelaySeconds: 15 # first check delay
 ```
-###### YAML example Replication Contgroller
+###### YAML example Replication Controller
 ```
 apiVersion: v1
 kind: ReplicationController     # module type
@@ -134,12 +134,33 @@ spec:
       - name: kubia
         image: luksa/kubia
 ```
-###### optional selector
+###### optional selector for Replica Set
 ```
   selector:
     matchExpressions:
       - key: app                # ключ
-        operator: In            # вхождение
+        operator: In            # выражение
         values:
           - kubia               # значение
+```
+###### YAML example Daemon Set
+```
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: ssd-monitor
+spec:
+  selector:
+    matchLabels:
+      app: ssd-monitor
+  template:
+    metadata:
+      labels:
+        app: ssd-monitor
+    spec:
+      nodeSelector:
+        disk: ssd
+      containers:
+      - name: main
+        image: luksa/ssd-monitor
 ```
