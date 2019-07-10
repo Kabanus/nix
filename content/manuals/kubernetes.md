@@ -169,14 +169,17 @@ spec:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: batch-job
+  name: kubia-job
 spec:
+  completions: 5                # кол-во модулей
+  parallelism: 2                # кол-во модулей выполняемых параллельно
   template:
     metadata:
       labels:
         app: batch-job
     spec:
-      restartPolicy: OnFailure    # restart policy, can't be "always"
+      restartPolicy: OnFailure  # политика перезапуска
+      activeDeadlineSeconds: 60 # ограничение работы модуля по времени
       containers:
       - name: main
         image: luksa/batch-job
