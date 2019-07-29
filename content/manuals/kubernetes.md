@@ -184,3 +184,23 @@ spec:
       - name: main
         image: luksa/batch-job
 ```
+###### YAML example CronJob
+```
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: batch-job-every-fifteen-minutes
+spec:
+  schedule: "0,15,30,45 * * * *"  # min/hour/day/month/day of week
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: periodic-batch-job
+        spec:
+            restartPolicy: OnFailure
+            containers:
+            – name: main
+              image: luksa/batch-job
+```
