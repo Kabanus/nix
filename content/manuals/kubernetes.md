@@ -204,3 +204,16 @@ spec:
             – name: main
               image: luksa/batch-job
 ```
+###### YAML example Service
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia
+spec:
+  ports:
+  - port: 80            # service port
+    targetPort: 8080    # container port
+  selector:
+    app: kubia
+```
