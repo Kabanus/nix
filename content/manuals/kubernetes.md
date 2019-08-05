@@ -46,6 +46,12 @@ kubectl port-forward MODNAME LOCAL:MODULE
 ##### show doc
 > kubectl explain node|pod|rc|svc|ns
 
+##### exec command
+kubectl exec PODNAME -- CMD
+
+##### exec shell
+kubectl exec -it PODNAME sh
+
 ###### options
 * -o wide // verbose
 * -o yaml // YAML
