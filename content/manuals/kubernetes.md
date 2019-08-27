@@ -217,9 +217,38 @@ kind: Service
 metadata:
   name: kubia
 spec:
+  sessionAffinity: ClientIP   # bond client IP and pod
   ports:
-  - port: 80            # service port
-    targetPort: 8080    # container port
+  - name: http                # if multi-port - need name
+    port: 80                  # service port
+    targetPort: 8080          # container port
+  - name: https               # if multi-port - need name
+    port: 443                 # service port
+    targetPort: 8443          # container port
   selector:
     app: kubia
+```
+###### YAML example Port Naming
+```
+kind: Pod
+spec:
+  containers:
+  – name: kubia
+    ports:
+    – name: http
+      containerPort: 8080     # name "http"
+    – name: https
+      containerPort: 8443     # name "https"
+```
+```
+apiVersion: v1
+kind: Service
+spec:
+  ports:
+  – name: http
+    port: 80
+    targetPort: http          # name "http"
+  – name: https
+    port: 443
+    targetPort: https         # name "https"
 ```
