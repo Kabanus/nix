@@ -1,6 +1,12 @@
 ##### print full 'kubeadm join'
 > kubeadm token create --print-join-command
 
+##### kubeadm join worker
+> kubeadm join FQDN/IP:PORT --token TOKEN --discovery-token-ca-cert-hash HASH
+
+##### kubeadm join master
+> kubeadm join FQDN/IP:PORT --token TOKEN --discovery-token-ca-cert-hash HASH --control-plane
+
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
