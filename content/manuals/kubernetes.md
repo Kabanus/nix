@@ -1,3 +1,6 @@
+##### print full 'kubeadm join'
+> kubeadm token create --print-join-command
+
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
@@ -11,13 +14,13 @@
 > kubectl logs PODNAME --previous
 
 ##### edit resource
-kubectl edit node|pod|rc|svc|ns NAME
+> kubectl edit node|pod|rc|svc|ns NAME
 
 ##### expose service
 > kubectl expose rc APPNAME --type=LoadBalancer --name NAME
 
 ##### port forwarding
-kubectl port-forward MODNAME LOCAL:MODULE
+> kubectl port-forward MODNAME LOCAL:MODULE
 
 ##### scale replication controller
 > kubectl scale rc NAME --replicas=NUMBER
@@ -47,10 +50,10 @@ kubectl port-forward MODNAME LOCAL:MODULE
 > kubectl explain node|pod|rc|svc|ns
 
 ##### exec command
-kubectl exec PODNAME -- CMD
+> kubectl exec PODNAME -- CMD
 
 ##### exec shell
-kubectl exec -it PODNAME sh
+> kubectl exec -it PODNAME sh
 
 ###### options
 * -o wide // verbose
