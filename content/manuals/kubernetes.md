@@ -261,3 +261,36 @@ spec:
     port: 443
     targetPort: https         # name "https"
 ```
+###### YAML exmaple External Service + Endpoints (no selector module)
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-service  # Name (same in Endpoints)
+spec:
+  ports:
+  – port: 80
+```
+```
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: external-service  # Name (same in Service)
+subsets:
+  – addresses:
+    – ip: 11.11.11.11     # Endpoints
+    – ip: 22.22.22.22     # Endpoints
+    ports:
+    – port: 80
+```
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-service
+spec:
+  type: ExternalName
+  externalName: someapi.somecompany.com   # FQDN
+  ports:
+  – port: 80
+```
