@@ -294,3 +294,18 @@ spec:
   ports:
   – port: 80
 ```
+###### YAML exampe NodePort
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-nodeport
+spec:
+  type: NodePort        # Тип
+  ports:
+  - port: 80            # Порт внутреннего кластерного IP службы
+    targetPort: 8080    # Целевой порт модулей, связанных с этой службой
+    nodePort: 30123     # Порт узла кластера
+  selector:
+    app: kubia
+```
