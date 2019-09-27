@@ -61,6 +61,11 @@
 ##### exec shell
 > kubectl exec -it PODNAME sh
 
+###### JSONPath example
+```
+> kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+```
+
 ###### options
 * -o wide // verbose
 * -o yaml // YAML
