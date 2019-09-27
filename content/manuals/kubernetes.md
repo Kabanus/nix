@@ -63,7 +63,7 @@
 
 ###### JSONPath example
 ```
-> kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
 ```
 
 ###### options
