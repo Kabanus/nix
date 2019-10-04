@@ -314,3 +314,33 @@ spec:
   selector:
     app: kubia
 ```
+###### YAML exampe LoadBalancer
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: kubia
+```
+###### YAML exampe Ingress
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubia
+spec:
+  rules:
+  - host: kabanus.no-ip.org             # FQDN
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: kubia-nodeport   # NodePort name
+          servicePort: 80               # NodePort port
+```
