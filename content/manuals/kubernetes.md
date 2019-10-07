@@ -7,6 +7,9 @@
 ##### kubeadm join master
 > kubeadm join FQDN/IP:PORT --token TOKEN --discovery-token-ca-cert-hash HASH --control-plane
 
+##### check component status
+> kubectl get componentstatuses
+
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
