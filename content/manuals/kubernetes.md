@@ -347,3 +347,4 @@ spec:
           serviceName: kubia-nodeport   # NodePort name
           servicePort: 80               # NodePort port
 ```
+.
