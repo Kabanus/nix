@@ -10,6 +10,9 @@
 ##### check component status
 > kubectl get componentstatuses
 
+##### resource usage
+> kubectl top node/pod
+
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
