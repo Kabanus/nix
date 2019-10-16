@@ -14,7 +14,7 @@
 > kubectl top node/pod
 
 ##### mark node as unschedulable/schedulable
-> kubectl cordon NODENAME
+> kubectl cordon/uncordon NODENAME
 
 ##### drain node
 > kubectl drain NODENAME
