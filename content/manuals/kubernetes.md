@@ -13,6 +13,12 @@
 ##### resource usage
 > kubectl top node/pod
 
+##### mark node as unschedulable/schedulable
+> kubectl cordon NODENAME
+
+##### drain node
+> kubectl drain NODENAME
+
 ##### run image
 > kubectl run APPNAME --image=REPO/NAME --port=8080 --generator=run/v1
 
