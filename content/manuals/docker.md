@@ -9,11 +9,17 @@
 ##### show network info
 > docker network inspect bridge   
 
+##### start image cmd run
+> docker run ubuntu echo "Hello, Kitty :)"   
+
 ##### start image interactive shell
-> docker run -it **_image_** **bash**
+> docker run -it **_image_** **/bin/bash**
 
 ##### start image background
 > docker run -d **_image_**
+
+##### volumes
+> docker volume **_COMMAND_**
 
 ###### options
 - --publish *"127.0.0.1:8080:80"* // port forwarding  
