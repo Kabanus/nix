@@ -1,5 +1,6 @@
 ##### docker install
-> https://docs.docker.com/engine/install/ubuntu/   
+- https://docs.docker.com/engine/install/ubuntu/   
+- https://docs.docker.com/engine/install/linux-postinstall/   
 > sudo usermod -aG docker $USER
 
 ##### start image interactive shell
