@@ -6,6 +6,9 @@
 ##### pull image
 > docker pull **_image_**
 
+##### show network info
+> docker network inspect bridge   
+
 ##### start image interactive shell
 > docker run -it **_image_** **bash**
 
