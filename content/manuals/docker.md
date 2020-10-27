@@ -19,7 +19,7 @@
 > docker run -d **_image_**
 
 ##### volumes
-> docker volume **_COMMAND_**
+> docker volume **COMMAND**
 
 ###### options
 - --publish *"127.0.0.1:8080:80"* // port forwarding  
