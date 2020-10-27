@@ -1,3 +1,7 @@
+##### docker install
+> https://docs.docker.com/engine/install/ubuntu/   
+> sudo usermod -aG docker $USER
+
 ##### start image interactive shell
 > docker run -it **_image_** **bash**
 
