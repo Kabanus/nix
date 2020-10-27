@@ -3,6 +3,9 @@
 - https://docs.docker.com/engine/install/linux-postinstall/   
 > sudo usermod -aG docker $USER
 
+##### pull image
+> docker pull **_image_**
+
 ##### start image interactive shell
 > docker run -it **_image_** **bash**
 
