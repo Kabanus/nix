@@ -18,10 +18,7 @@
 ##### start image background
 > docker run -d **_image_**
 
-##### volumes
-> docker volume **command**
-
-###### options
+###### docker run options
 - --detach // run container in backgroung   
 - --interactive // keep STDIN open   
 - --tty // pseudo-TTY   
@@ -34,6 +31,9 @@
 - --volume */data* // mount   
 - --rm // remove container when exit   
 - --memory bytes // mem limit
+
+##### volumes
+> docker volume **command**
 
 ##### connect container interactive shell
 > docker exec -it **_container_** **bash**
