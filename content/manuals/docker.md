@@ -46,6 +46,9 @@
 > docker ps // running  
 > docker ps -a // all
 
+##### container control
+> docker start/stop/restart **_container_**   
+
 ##### container attach
 > docker attach **_container_**   
 
