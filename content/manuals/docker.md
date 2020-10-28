@@ -22,12 +22,18 @@
 > docker volume **command**
 
 ###### options
+- --detach // run container in backgroung   
+- --interactive // keep STDIN open   
+- --tty // pseudo-TTY   
 - --publish *"127.0.0.1:8080:80"* // port forwarding  
+- --publish-all // port forwarding (all)   
 - --hostname *server_name* // host name  
 - --name *container_name* // container name  
 - --env *MYSQL_ROOT_PASSWORD=password* // variables  
 - --link *container:alias* // dependencies  
-- --volume */data* // mount
+- --volume */data* // mount   
+- --rm // remove container when exit   
+- --memory bytes // mem limit
 
 ##### connect container interactive shell
 > docker exec -it **_container_** **bash**
