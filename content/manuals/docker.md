@@ -82,3 +82,6 @@
 
 ##### build image
 > docker build -t **repository/image**
+
+##### copy files
+> docker cp **_container:/src_** **_dst_**
