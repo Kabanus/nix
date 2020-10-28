@@ -3,6 +3,10 @@
 - https://docs.docker.com/engine/install/linux-postinstall/   
 > sudo usermod -aG docker $USER
 
+##### cheat sheet
+- https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf   
+- https://github.com/wsargent/docker-cheat-sheet   
+
 ##### pull image
 > docker pull **_image_**
 
@@ -52,6 +56,9 @@
 ##### container attach
 > docker attach **_container_**   
 
+##### container top
+> docker top **_container_**   
+
 ##### container detail
 > docker inspect **_container_**
 
@@ -65,7 +72,7 @@
 > docker history **_image_**
 
 ##### remove all stopped containers
-> docker rm -v ${docker ps -aq -f status=exited}
+> docker rm -v $(docker ps -aq -f status=exited)
 
 ##### make image from container
 > docker commit **_container_** **repository/image**
