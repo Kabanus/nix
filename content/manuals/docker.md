@@ -20,7 +20,8 @@
 > docker run -it **_image_** **/bin/bash**
 
 ##### start image background
-> docker run -d **_image_**
+> docker run -d **_image_**   
+> docker run -d -p 80:80 -v $PWD/html:/usr/share/nginx/html nginx   
 
 ###### docker run options
 - --detach // run container in backgroung   
