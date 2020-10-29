@@ -1,6 +1,7 @@
 ##### docker install
 - https://docs.docker.com/engine/install/   
 - https://docs.docker.com/engine/install/linux-postinstall/   
+- https://docs.docker.com/compose/install/   
 > sudo usermod -aG docker $USER
 
 ##### cheat sheet
