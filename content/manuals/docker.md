@@ -6,6 +6,7 @@
 ##### cheat sheet
 - https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf   
 - https://github.com/wsargent/docker-cheat-sheet   
+- https://design.jboss.org/redhatdeveloper/marketing/docker_cheatsheet/cheatsheet/images/docker_cheatsheet_r3v2.pdf   
 
 ##### pull image
 > docker pull **_image_**
