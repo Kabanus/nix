@@ -1,3 +1,4 @@
-FROM php:7.2-fpm
+# Dockerfile example
+FROM busybox
 
-RUN docker-php-ext-install mysqli
+CMD sleep 3600
