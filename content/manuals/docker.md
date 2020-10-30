@@ -11,6 +11,9 @@
 - https://gist.github.com/jonlabelle/bd667a97666ecda7bbc4f1cc9446d43a   
 - https://github.com/sematext/cheatsheets/blob/master/docker-swarm-cheatsheet.md
 
+##### k8s in docker
+- https://kind.sigs.k8s.io/   
+
 ##### pull image
 > docker pull **_image_**
 
