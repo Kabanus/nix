@@ -9,6 +9,7 @@
 - https://github.com/wsargent/docker-cheat-sheet   
 - https://design.jboss.org/redhatdeveloper/marketing/docker_cheatsheet/cheatsheet/images/docker_cheatsheet_r3v2.pdf   
 - https://gist.github.com/jonlabelle/bd667a97666ecda7bbc4f1cc9446d43a   
+- https://github.com/sematext/cheatsheets/blob/master/docker-swarm-cheatsheet.md
 
 ##### pull image
 > docker pull **_image_**
