@@ -13,9 +13,6 @@
 ##### pull image
 > docker pull **_image_**
 
-##### show network info
-> docker network inspect bridge   
-
 ##### start image cmd run
 > docker run ubuntu echo "Hello, Kitty :)"   
 
@@ -39,6 +36,9 @@
 - --volume */data* // mount   
 - --rm // remove container when exit   
 - --memory bytes // mem limit
+
+##### show network info
+> docker network inspect bridge   
 
 ##### volumes
 > docker volume **command**
