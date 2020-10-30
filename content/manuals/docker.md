@@ -90,3 +90,8 @@
 ##### copy files
 > docker cp **_container:/src_** **_dst_**   
 > docker cp **_src_** **_container:/dst_**
+
+##### docker swarm
+> docker swarm init // init cluster   
+> docker swarm join **_TOKEN_** // join cluster   
+> docker swarm join-token (worker|manager) // get token   
