@@ -16,3 +16,5 @@
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/hardware.md)
 # Swift
 > [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/swift.md)
+# Cli
+> [Manual](https://github.com/Kabanus/nix/blob/master/content/manuals/cli.md)
