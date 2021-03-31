@@ -27,8 +27,10 @@ echo "kernel.shmall = $(awk '$1 == "MemTotal:"{tmp=$2/2/4; printf"%0.0f\n", tmp}
 ###### Temporary
 > echo never > /sys/kernel/mm/transparent_hugepage/enabled
 ###### Persistent
-1. > sed -i -e '/^GRUB_CMDLINE/s/"/ transparent_hugepage=never&/2' /etc/default/grub
-2. > grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+sed -i -e '/^GRUB_CMDLINE/s/"/ transparent_hugepage=never&/2' /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
 ###### Check
 > egrep AnonHugePages /proc/meminfo /proc/\*/smaps | grep -v '0 kB'
 
@@ -58,14 +60,14 @@ echo "Overall swap used: $OVERALL"
 > rsync --rsync-path="sudo rsync" 10.10.10.10:/etc/kubernetes/admin.conf .
 
 ##### CPU
-> mpstat -P ALL
-> pidstat -p <pid>
-> ps aux --sort=-pcpu | head -10
-> cpupower -c all frequency-info -p
-> cpupower -c all idle-info
+> mpstat -P ALL   
+> pidstat -p <pid>   
+> ps aux --sort=-pcpu | head -10   
+> cpupower -c all frequency-info -p   
+> cpupower -c all idle-info   
 
 ##### RAM
-> ps aux --sort=-rss | head -10
-> ps aux --sort=-vsz | head -10
-> ps aux --sort=-rss | awk '{sum += $5} END {print sum}'
+> ps aux --sort=-rss | head -10   
+> ps aux --sort=-vsz | head -10   
+> ps aux --sort=-rss | awk '{sum += $5} END {print sum}'   
 > ps aux --sort=-vsz | awk '{sum += $5} END {print sum}'
