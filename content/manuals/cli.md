@@ -47,6 +47,18 @@ for DIR in `find /proc/ -maxdepth 1 -type d | egrep "^/proc/[0-9]"`; do
 done
 echo "Overall swap used: $OVERALL"
 ```
+##### SWAP usage per process (mod)
+```
+for DIR in `find /proc/ -maxdepth 1 -type d | egrep "^/proc/[0-9]"`; do
+  SUM=0
+  PID=`echo $DIR | cut -d / -f 3`
+  PROGNAME=`ps -p $PID -o comm,user --no-headers`
+    for SWAP in `grep Swap $DIR/smaps 2>/dev/null| awk '{ print $2 }'`
+      do let SUM=$SUM+$SWAP
+    done
+  echo "PID=$PID - Swap used: $(($SUM/1024))mb - ($PROGNAME )"
+done | grep -v "Swap used: 0" | sort -n -k 5 >> swap.txt
+```
 
 ##### Switch Terminal
 > chvt 1
@@ -66,3 +78,29 @@ echo "Overall swap used: $OVERALL"
 > ps aux --sort=-vsz | head -10   
 > ps aux --sort=-rss | awk '{sum += $5} END {print sum}'   
 > ps aux --sort=-vsz | awk '{sum += $5} END {print sum}'
+
+##### Shared Memory
+> ipcs -m   
+> ipcs -mu   
+> cat /proc/sysvipc/shm
+
+##### Disk Usage (exclude /)
+> awk '{print $2}' /proc/mounts | egrep -vw '^/' >> excludes.tmp; du -sh /* -X excludes.tmp | sort -h; rm -f excludes.tmp
+
+##### Open files
+> fuser -vm /dev/sdc1   
+> lsof +L1
+
+##### IOPS
+> iostat -x -N 1   
+> fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=fiotest --filename=fiotest --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
+
+##### SAR
+> LANG=RU; sar -s 02:40:00 -e 03:30:00 -d -p | awk '$10>=80 {print $0}'
+
+##### IOSTAT Veritas
+```
+for DG in `ls /dev/vx/dsk`;
+  do for vol in `vxprint -g $DG | grep "^v " | awk '{ print $2}'`;do vxprint -g $DG $vol -F "  vol=%vol minor=%minor"; done;
+done
+```
