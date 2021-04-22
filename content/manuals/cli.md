@@ -104,3 +104,6 @@ for DG in `ls /dev/vx/dsk`;
   do for vol in `vxprint -g $DG | grep "^v " | awk '{ print $2}'`;do vxprint -g $DG $vol -F "  vol=%vol minor=%minor"; done;
 done
 ```
+
+##### XXX packets dropped by kernel
+> tcpdump -s 1520 -ttt -vvv -n -i eth0
