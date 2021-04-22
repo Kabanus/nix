@@ -66,6 +66,9 @@ done | grep -v "Swap used: 0" | sort -n -k 5 >> swap.txt
 ##### Copy root files
 > rsync --rsync-path="sudo rsync" 10.10.10.10:/etc/kubernetes/admin.conf .
 
+##### SSL Export
+> NAME=google.com; echo | openssl s_client -servername $NAME -connect $NAME:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > certificate.crt
+
 ##### CPU
 > mpstat -P ALL   
 > pidstat -p <pid>   
@@ -104,6 +107,3 @@ for DG in `ls /dev/vx/dsk`;
   do for vol in `vxprint -g $DG | grep "^v " | awk '{ print $2}'`;do vxprint -g $DG $vol -F "  vol=%vol minor=%minor"; done;
 done
 ```
-
-##### XXX packets dropped by kernel
-> tcpdump -s 1520 -ttt -vvv -n -i eth0
